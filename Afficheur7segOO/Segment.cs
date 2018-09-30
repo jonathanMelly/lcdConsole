@@ -3,10 +3,6 @@
 //Date : TODO
 //Description : TODO
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Afficheur7segOO
 {
@@ -23,7 +19,10 @@ namespace Afficheur7segOO
             this.symbol = symbol;
         }
 
-        public void turnOn()
+        /// <summary>
+        /// Simule l'allumage du segment
+        /// </summary>
+        public void TurnOn()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(symbol);

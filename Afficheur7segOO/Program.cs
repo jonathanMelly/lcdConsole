@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//Auseur : JMY
+//Lieu   : ETML
+//Description : squelette pour afficheur LCD dans la console
+using System;
 
 namespace Afficheur7segOO
 {
@@ -10,7 +9,8 @@ namespace Afficheur7segOO
     {
         static void Main(string[] args)
         {
-            new Messenger(1).display();
+            //Affiche un 1 en mode LCD
+            new Messenger(1).Display();
 
             Console.ReadLine();
         }

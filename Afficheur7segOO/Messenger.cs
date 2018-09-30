@@ -12,19 +12,39 @@ namespace Afficheur7segOO
 {
     class Messenger
     {
+        //La valeur à afficher
         private byte digit;
-        private Segment[] segments = new Segment[7];
+
+        //Les segments disponibles
+        Segment A;
+        Segment B;
+        Segment C;
 
         public Messenger(byte digit)
         {
+            //On stocke le digit à afficher (pour plus tard avec la méthode Display)
             this.digit = digit;
 
-            segments[0] = new Segment(1, 0, '-');
-            segments[1] = new Segment(2, 1, '|');
-            segments[2] = new Segment(2, 3, '|');
+            //Définitions des 3 premiers segments
+            //Il faut imaginer le tableau suivant
+            /*
+             *         Colonnes (X)
+             * Lignes (Y)   |x=0|x=1|x=2|
+             *           y=0|   | A |   |
+             *           y=1| F |   | B |
+             *           y=2|   | G |   |
+             *           y=3| E |   | C |
+             *           y=4|   | D |   |
+             */
+            A = new Segment(1, 0, '-');//Segment A, colonne 1 (x), ligne 0(y)
+            B = new Segment(2, 1, '|');//Segment B, colonne 2, ligne 1
+            C = new Segment(2, 3, '|');//Segment C, colonne 2, ligne 3
         }
 
-        public void display()
+        /// <summary>
+        /// Affichage des segments correspondants au digit demandé
+        /// </summary>
+        public void Display()
         {
             switch(digit)
             {
@@ -32,8 +52,8 @@ namespace Afficheur7segOO
                     
                     break;
                 case 1:
-                    segments[1].turnOn();
-                    segments[2].turnOn();
+                    B.TurnOn();
+                    C.TurnOn();
                     break;
                 case 2:
                     break;
